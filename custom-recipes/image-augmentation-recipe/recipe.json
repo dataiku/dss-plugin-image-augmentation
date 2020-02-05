@@ -1,0 +1,42 @@
+{
+    "meta": {
+        "label": "Image augmentation recipe",
+        "description": "",
+        "icon": "icon-puzzle-piece"
+    },
+
+    "kind": "PYTHON",
+
+    "inputRoles" : [
+        {
+            "name": "input_image_folder",
+            "label": "Input folder",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsManagedFolder": true
+        }
+    ],
+
+    "outputRoles" : [
+        {
+            "name": "output_image_folder",
+            "label": "Output folder",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsManagedFolder": true
+        }
+    ],
+
+    "params": [
+        {
+            "name": "scaling_factor",
+            "label": "User-readable label",
+            "type": "INT",
+            "description": "Scaling factor for image augmentation",
+            "mandatory": true
+        }
+    ],
+    
+    "resourceKeys": []
+
+}
