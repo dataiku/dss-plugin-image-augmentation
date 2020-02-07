@@ -15,9 +15,9 @@ logging.basicConfig(level=logging.INFO, format='Image Augmentation Plugin %(leve
 input_names = get_input_names_for_role('input_image_folder')
 output_names = get_output_names_for_role('output_image_folder')
 
-scaling_factor = get_recipe_config()['scaling_factor']
-height = get_recipe_config()['height']
-width = get_recipe_config()['width']
+scaling_factor = int(get_recipe_config()['scaling_factor'])
+height = int(get_recipe_config()['height'])
+width = int(get_recipe_config()['width'])
 
 if height > 1024:
     height = 1024
