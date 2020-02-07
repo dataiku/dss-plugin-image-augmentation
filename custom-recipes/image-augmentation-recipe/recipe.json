@@ -2,7 +2,7 @@
     "meta": {
         "label": "Image augmentation recipe",
         "description": "",
-        "icon": "icon-puzzle-piece"
+        "icon": "icon-trophy"
     },
 
     "kind": "PYTHON",
@@ -30,10 +30,26 @@
     "params": [
         {
             "name": "scaling_factor",
-            "label": "User-readable label",
+            "label": "Augmentation factor",
             "type": "INT",
-            "description": "Scaling factor for image augmentation",
+            "description": "Number of new augmented images generated per image",
             "mandatory": true
+        },
+        {
+            "name": "height",
+            "label": "Pixel height",
+            "type": "INT",
+            "description": "",
+            "mandatory": true,
+            "defaultValue": 256
+        },
+        {
+            "name": "width",
+            "label": "Pixel width",
+            "type": "INT",
+            "description": "",
+            "mandatory": true,
+            "defaultValue": 256
         }
     ],
     
