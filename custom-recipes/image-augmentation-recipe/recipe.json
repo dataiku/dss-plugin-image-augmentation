@@ -1,0 +1,62 @@
+{
+    "meta": {
+        "label": "Image augmentation plugin",
+        "description": "Generate new images using keras image augmentation technique",
+        "icon": "icon-expand"
+    },
+
+    "kind": "PYTHON",
+
+    "inputRoles" : [
+        {
+            "name": "input_image_folder",
+            "label": "Input folder",
+            "arity": "UNARY",
+            "required": true,
+            "description": "Folder of input images",
+            "acceptsManagedFolder": true,
+            "acceptsDataset": false
+        }
+    ],
+
+    "outputRoles" : [
+        {
+            "name": "output_image_folder",
+            "label": "Output folder",
+            "arity": "UNARY",
+            "required": true,
+            "description": "Folder of output images",
+            "acceptsManagedFolder": true,
+            "acceptsDataset": false
+        }
+    ],
+
+    "params": [
+        {
+            "name": "scaling_factor",
+            "label": "Augmentation factor",
+            "type": "INT",
+            "description": "Number of new augmented images generated per image",
+            "mandatory": true
+        },
+        {
+            "name": "height",
+            "label": "Pixel height",
+            "type": "INT",
+            "description": "",
+            "mandatory": true,
+            "defaultValue": 256
+        },
+        {
+            "name": "width",
+            "label": "Pixel width",
+            "type": "INT",
+            "description": "",
+            "mandatory": true,
+            "defaultValue": 256
+        }
+    ],
+    
+    "resourceKeys": []
+
+}
