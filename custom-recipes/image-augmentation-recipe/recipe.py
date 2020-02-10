@@ -64,7 +64,8 @@ for sample_image in input_images_filenames:
         new_img = Image.fromarray(np.uint8(img))
 
         buf = BytesIO()
-        new_img.save(buf, format='JPEG')
+        new_img_rgb = new_img.convert('RGB')
+        new_img_rgb.save(buf, format='JPEG')
         byte_im = buf.getvalue()
 
         with output_folder.get_writer(sample_image.split('.')[0] + " _" + str(i) + ".jpg") as w:
@@ -72,7 +73,8 @@ for sample_image in input_images_filenames:
 
     old_img = Image.fromarray(np.uint8(img_array))
     buf = BytesIO()
-    old_img.save(buf, format='JPEG')
+    old_img_rgb = old_img.convert('RGB')
+    old_img_rgb.save(buf, format='JPEG')
     byte_im = buf.getvalue()
 
     with output_folder.get_writer(sample_image) as w:
