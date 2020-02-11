@@ -34,7 +34,9 @@ def get_generator_object(recipe_config):
     def _p(param_name, default=None):
         return recipe_config.get(param_name, default)
 
-    if _p('use_custom_transformation'):
+    custom_gen = _p('use_custom_transformation')
+    
+    if custom_gen:
         zoom_range = _p('zoom_range')
         rotation_range = int(_p('rotation_range'))
         shear_range = _p('shear_range')
@@ -52,7 +54,7 @@ def get_generator_object(recipe_config):
                     width_shift_range=0.2,
                     height_shift_range=0.2,
                     horizontal_flip=horizontal_flip)
-    return datagen
+    return datagen, custom_gen
 
 
 
