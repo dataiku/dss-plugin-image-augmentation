@@ -6,8 +6,6 @@
     },
 
     "kind": "PYTHON",
-    
-    "selectableFromDataset": "input_image_folder",
 
     "inputRoles" : [
         {

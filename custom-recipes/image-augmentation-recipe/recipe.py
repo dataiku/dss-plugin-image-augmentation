@@ -3,6 +3,7 @@ from dataiku.customrecipe import *
 import logging
 import numpy as np
 from imageaugmentation import *
+from parameters import *
 
 from dataiku import pandasutils as pdu
 import keras
@@ -17,8 +18,10 @@ logging.basicConfig(level=logging.INFO, format='Image Augmentation Plugin %(leve
 input_folder, output_folder = get_input_ouput()
 # get images parameters
 scaling_factor, height, width = get_images_params(get_recipe_config())
+# get ImageDataGenerator parameters
+gen_params = get_generator_params(get_recipe_config())
 # get ImageDataGenerator object with right parameters
-datagen, custom_gen = get_generator_object(get_recipe_config())
+datagen, custom_gen = get_generator_object(gen_params)
 
 input_filenames = input_folder.list_paths_in_partition()
 
@@ -74,4 +77,3 @@ for sample_image in input_filenames:
 
     with output_folder.get_writer(sample_image.split('.')[0]+'.jpg') as w:
         w.write(byte_im)
-

@@ -8,11 +8,11 @@
 
         "description": "Randomly generate new images from existing images in order to enrich an image dataset",
 
-        "author": "Stanislas GUINEL",
+        "author": "Dataiku (Stanislas GUINEL)",
 
         "icon": "icon-expand",
 
-        "tags": ["Images","Enrichment"], //for example: ["Machine Learning", "NLP"]
+        "tags": ["Images","Enrichment"],
 
         "url": "https://www.dataiku.com/product/plugins/image-augmentation.html",
 
