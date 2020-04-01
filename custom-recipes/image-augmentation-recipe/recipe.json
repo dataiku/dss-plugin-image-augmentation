@@ -1,0 +1,103 @@
+{
+    "meta": {
+        "label": "Image augmentation",
+        "description": "Randomly generate new images from existing images in order to enrich an image dataset",
+        "icon": "icon-expand"
+    },
+
+    "kind": "PYTHON",
+
+    "inputRoles" : [
+        {
+            "name": "input_image_folder",
+            "label": "Input folder",
+            "arity": "UNARY",
+            "required": true,
+            "description": "Folder of input images",
+            "acceptsManagedFolder": true,
+            "acceptsDataset": false
+        }
+    ],
+
+    "outputRoles" : [
+        {
+            "name": "output_image_folder",
+            "label": "Output folder",
+            "arity": "UNARY",
+            "required": true,
+            "description": "Folder of output images",
+            "acceptsManagedFolder": true,
+            "acceptsDataset": false
+        }
+    ],
+
+    "params": [
+        {
+            "name": "scaling_factor",
+            "label": "Images generated per image",
+            "type": "INT",
+            "description": "Number of new augmented images generated per image (max 50)",
+            "mandatory": true
+        },
+        {
+            "name": "height",
+            "label": "Pixel height",
+            "type": "INT",
+            "description": "",
+            "mandatory": true,
+            "defaultValue": 256
+        },
+        {
+            "name": "width",
+            "label": "Pixel width",
+            "type": "INT",
+            "description": "",
+            "mandatory": true,
+            "defaultValue": 256
+        },
+        {
+            "name": "use_custom_transformation",
+            "label" : "Use custom image generation",
+            "type": "BOOLEAN"
+        },
+        {
+            "name": "zoom_range",
+            "label": "Zoom range",
+            "type": "DOUBLE",
+            "description": "Random zoom range between 1-x and 1+x",
+            "mandatory": true,
+            "defaultValue": 0.2,
+            "visibilityCondition" : "model.use_custom_transformation"
+        },
+        {
+            "name": "rotation_range",
+            "label": "Rotation range",
+            "type": "INT",
+            "description": "Degree range for random rotations",
+            "mandatory": true,
+            "defaultValue": 20,
+            "visibilityCondition" : "model.use_custom_transformation"
+        },
+        {
+            "name": "shear_range",
+            "label": "Shear range",
+            "type": "DOUBLE",
+            "description": "Shear Intensity (Shear angle in counter-clockwise direction in degrees)",
+            "mandatory": true,
+            "defaultValue": 0.2,
+            "visibilityCondition" : "model.use_custom_transformation"
+        },
+        {
+            "name": "horizontal_flip",
+            "label": "Horizontal flip",
+            "type": "BOOLEAN",
+            "description": "Randomly flip inputs horizontally",
+            "mandatory": true,
+            "defaultValue": true,
+            "visibilityCondition" : "model.use_custom_transformation"
+        }
+    ],
+    
+    "resourceKeys": []
+
+}
