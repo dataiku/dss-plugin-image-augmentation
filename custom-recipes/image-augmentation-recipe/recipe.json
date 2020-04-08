@@ -13,7 +13,7 @@
             "label": "Input folder",
             "arity": "UNARY",
             "required": true,
-            "description": "Folder of input images",
+            "description": "Folder containing your images",
             "acceptsManagedFolder": true,
             "acceptsDataset": false
         }
@@ -25,7 +25,7 @@
             "label": "Output folder",
             "arity": "UNARY",
             "required": true,
-            "description": "Folder of output images",
+            "description": "Folder to write augmented images to",
             "acceptsManagedFolder": true,
             "acceptsDataset": false
         }
@@ -34,9 +34,9 @@
     "params": [
         {
             "name": "scaling_factor",
-            "label": "Images generated per image",
+            "label": "Augmentation factor",
             "type": "INT",
-            "description": "Number of new augmented images generated per image (max 50)",
+            "description": "Number of new augmented images generated for each input image (max 50)",
             "mandatory": true
         },
         {
@@ -82,7 +82,7 @@
             "name": "shear_range",
             "label": "Shear range",
             "type": "DOUBLE",
-            "description": "Shear Intensity (Shear angle in counter-clockwise direction in degrees)",
+            "description": "Shear intensity (the shear angle, expressed in degrees, counter-clockwise direction)",
             "mandatory": true,
             "defaultValue": 0.2,
             "visibilityCondition" : "model.use_custom_transformation"
@@ -97,7 +97,7 @@
             "visibilityCondition" : "model.use_custom_transformation"
         }
     ],
-    
+
     "resourceKeys": []
 
 }
