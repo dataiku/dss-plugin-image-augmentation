@@ -1,21 +1,16 @@
 {
     "id": "image-augmentation",
 
-    "version": "1.0.0",
+    "version": "1.0.1",
 
     "meta": {
         "label": "Image augmentation",
-
+        "category": "Computer Vision",
         "description": "Randomly generate new images from existing images in order to enrich an image dataset.",
-
         "author": "Dataiku (Stanislas GUINEL)",
-
         "icon": "icon-expand",
-
-        "tags": ["Images", "Enrichment"],
-
+        "tags": ["Image", "Computer Vision", "Enrichment"],
         "url": "https://www.dataiku.com/product/plugins/image-augmentation.html",
-
         "licenseInfo": "Apache Software License"
     }
 }
